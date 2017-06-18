@@ -1,0 +1,102 @@
+﻿<form style="width:300px; padding:20px;" id="call-back-form3" class="callback-form validate" novalidate="novalidate" action="/site/callBackOrder" method="POST">
+
+    <div style="display:none;" id="subbutton3" class="messages">Заявка отправлена</div>
+
+    <h1 style="font-weight:bold; font-size:37px; margin-bottom:10px;">Получите консультацию специалиста</h1>
+    <input type="text" placeholder="Ваше имя" style="height:40px" name="name" id="name3" required="required" class="required" />
+    <input type="text" placeholder="Ваш телефон" style="height:40px" name="phone" id="phone3" required="required" class="required" />
+
+
+    <input type="submit" class="submit-button" value="Отправить заявку">
+</form>
+<script>
+    $(document).ready(function () {
+
+        var $form = $('#call-back-form3');
+        var $name = $form.find('[name="name"]');
+        var $phone = $form.find('[name="phone"]');
+        var $email = $form.find('[name="email"]');
+        var $captcha = $form.find('#captcha3');
+
+        var $button = $form.find('input[type="submit"]');
+        $button.on('click', function () { $form.submit(); return false; });
+
+        if (typeof ($.fn.mask) !== 'undefined') {
+            $form.find("input[name='phone']").mask("+7(999)999-99-99");
+        }
+
+        var $message = $form.find('.messages');
+        var sendAjaxForm = function ($form) {
+            var data = {};
+            var $inputs = $form.find('input[type="hidden"],input[type="text"],input[type="checkbox"]:checked,input[type="radio"]:checked,input[type="tel"],input[type="email"],input[type="url"],textarea,select');
+            $inputs.each(function () {
+                data[$(this).attr('name')] = $(this).val();
+            });
+
+            data['captcha_id'] = $('#captcha').attr('data-id');
+            data['captcha_value'] = $('#captcha').val();
+            data['guid'] = 'fb1a9e8f349a283d623ef8401ee903fc';
+
+            $.post(
+                $form.attr('action'),
+                data,
+                function (data) {
+                    if (data.status == 'success') {
+                        $message.show();
+                        setTimeout(function () {
+                            $message.hide();
+                            $.fancybox.close();
+                        }, 1500);
+
+                        if (typeof (PNotify) !== 'undefiend') {
+                            new PNotify({
+                                title: 'Успешно!',
+                                text: 'Ваша заявка успешно отправлена.',
+                                addclass: 'success',
+                                icon: 'fa fa-info-circle',
+                                opacity: 0.6,
+                                nonblock: {
+                                    /*nonblock: true*/
+                                }
+                            });
+                        } else {
+                        }
+
+                        $form.get(0).reset();
+                    } else {
+                        if (!data.captcha) {
+                            $captcha.addClass('error');
+                        }
+                    }
+                },
+                'json'
+            );
+
+        }
+        if (typeof ($.fn.validate) !== 'undefined') {
+
+            $form.validate({
+                errorPlacement: function (error, element) { },
+                submitHandler: function (form) {
+
+                    sendAjaxForm($form);
+                }
+            });
+
+        } else {
+            $form.bind('submit', function (event) {
+                event.preventDefault();
+                var name = $name.val();
+                var phone = $phone.val();
+
+                if (name.length && phone.length) {
+
+                    sendAjaxForm($form);
+                }
+            });
+        }
+
+    });
+
+
+</script>
