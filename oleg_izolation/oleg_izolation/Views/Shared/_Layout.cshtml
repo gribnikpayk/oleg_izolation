@@ -1,10 +1,11 @@
-﻿<html>
+﻿@using oleg_izolation.Helpers
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="Напыляемая теплоизоляция Теплый Дом">
-    <title>Напыляемая теплоизоляция Теплый Дом - Теплый Дом</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/bundles/mainCss")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jQAddons")
@@ -18,11 +19,11 @@
                 <div class="info-block">
                     <div class="info-inner">
                         <!--
-                            <div class="slogan-block">
-                                <div class="slogan-inner">
-                                                                    </div>
+                        <div class="slogan-block">
+                            <div class="slogan-inner">
                             </div>
-                                -->
+                        </div>
+                        -->
                         <div class="adress-block">
                             <div class="adress-inner">
                                 <i class="fa fa-map-marker fa-2x phone-header-color" aria-hidden="true" style="margin-right:6px"></i>
@@ -62,11 +63,13 @@
                             <li class="contacts"><a href="@Url.Action("Contacts","Home")">Контакты</a></li>
                         </ul>
                         <script>
-                            $('.@ViewBag.PageName').addClass("active")
+                            if ('@ViewBag.PageName' != '') {
+                                $('.@ViewBag.PageName').addClass("active");
+                            }
                         </script>
                     </div>
                 </nav>
-
+                
                 <div class="header-bottom-block clear">
 
                     <section id="slider" class="clear">
@@ -84,6 +87,7 @@
                 </div>
             </div>
         </header>
+        <a name="top"></a>
         <div id="bl_preim">
             <div class="container" style="width:933px; padding-top:25px; padding-bottom:10px">
                 <img src="~/Content/Images/preim.png">
@@ -98,19 +102,44 @@
                             <h3 class="title-sidebar">МЕНЮ</h3>
                             <div class="content-sidebar">
                                 <ul class="menu" id="yw1">
-                                    <li><a href="/penopoliuretan">Пенополиуретан</a></li>
-                                    <li><a href="/polimochevina">Полимочевина</a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom__zhilogo_doma_kryshi_vnurennikh_sten_sten_snaruzhi_pola_i_potolka_balkona_i_lodzhii">Утепление напыляемым пенополиуретаном  жилого дома </a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom_podvala"> Утепление напыляемым пенополиуретаном подвала</a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom_fundamenta_i_tsokolya">Утепление напыляемым пенополиуретаном фундамента и цоколя</a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom_angara">Утепление напыляемым пенополиуретаном ангара</a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom_furgona">Утепление напыляемым пенополиуретаном фургона</a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom_garazha">Утепление напыляемым пенополиуретаном гаража</a></li>
-                                    <li><a href="/uteplenie_napylyaemym_penopoliuretanom_bani_i_sauny">Утепление напыляемым пенополиуретаном бани и сауны</a></li>
-                                    <li><a href="/gidroizolyatsiya_polimochevinoy_fundamenta">Гидроизоляция полимочевиной фундамента</a></li>
-                                    <li><a href="/gidroizolyatsiya_polimochevinoy_podvala">Гидроизоляция полимочевиной подвала</a></li>
-                                    <li><a href="/gidroizolyatsiya_polimochevinoy__krovli">Гидроизоляция полимочевиной  кровли</a></li>
+                                    <li>
+                                        @Html.LandingPageUrl("Penopyleyretan", "Пенополиуретан")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Polimochevina", "Полимочевина")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_1", "Утепление напыляемым пенополиуретаном жилого дома")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_2", "Утепление напыляемым пенополиуретаном подвала")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_3", "Утепление напыляемым пенополиуретаном фундамента и цоколя")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_4", "Утепление напыляемым пенополиуретаном ангара")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_5", "Утепление напыляемым пенополиуретаном фургона")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_6", "Утепление напыляемым пенополиуретаном гаража")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Yteplenie_7", "Утепление напыляемым пенополиуретаном бани и сауны")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Gidroizolation_1", "Гидроизоляция полимочевиной фундамента")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Gidroizolation_2", "Гидроизоляция полимочевиной подвала")
+                                    </li>
+                                    <li>
+                                        @Html.LandingPageUrl("Gidroizolation_3", "Гидроизоляция полимочевиной кровли")
+                                    </li>
                                 </ul>
+                                
                             </div>
                         </div>
 
@@ -121,9 +150,20 @@
                 </aside>
                 <section id="content">
                     <div class="content-inner">
-                        <article id="article" class=" page">
+                        <article id="article" class="page">
                             <div class="article-inner">
                                 @RenderBody()
+                                <script>
+                                    if ('@ViewBag.LeftMenu' != '') {
+                                        var urls = $('.landingPageHref');
+                                        for (var i = 0; i < urls.length; i++) {
+                                            var jQElem = $(urls[i]);
+                                            if (jQElem.attr("href").indexOf('@ViewBag.LeftMenu') >= 1) {
+                                                $(jQElem.parent()).addClass("active");
+                                            }
+                                        }
+                                    }
+                                </script>
                             </div>
                         </article>
                     </div>

@@ -209,6 +209,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\LandingPageUrl_Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -308,6 +309,42 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\callBackForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Penopyleyretan.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Polimochevina.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_4.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_5.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_6.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Yteplenie_7.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Gidroizolation_1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Gidroizolation_2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LandingPages\Gidroizolation_3.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.IO.MemoryMappedFiles;
+using System.Web.Mvc;
 
 namespace oleg_izolation.Controllers
 {
@@ -27,6 +28,12 @@ namespace oleg_izolation.Controllers
         public ActionResult callBackForm()
         {
             return View("~/Views/callBackForm.cshtml");
+        }
+
+        public ActionResult LandingPage(string pageName)
+        {
+            var pagePath = $"~/Views/LandingPages/{pageName}.cshtml";
+            return View(pagePath);
         }
     }
 }
