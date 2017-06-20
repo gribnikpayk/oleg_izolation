@@ -22,7 +22,7 @@ namespace oleg_izolation.Services
         {
             using (var context = new CallBackContext())
             {
-                return context.CallBackModels.OrderBy(x => x.Date).ToList();
+                return context.CallBackModels.OrderByDescending(x => x.Date).ToList();
             }
         }
     }
