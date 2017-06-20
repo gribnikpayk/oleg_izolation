@@ -114,8 +114,8 @@ $(function(){
         return false;
     });
 	
-    $("#form_contact").submit(function(e){
-        var hasError = false
+    $("#form_contact").submit(function(e) {
+        var hasError = false;
 		var ajax = true;
 		
 		var this_form = $(this);

@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+@model List<oleg_izolation.Models.CallBackModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CallBack</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Обратная связь</h1>
+        <p>здесь показаны пользователи, заполнившие контактную форму либо заказавшие звонок</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table-striped" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Телефон</th>
+                            <th>Email</th>
+                            <th>Текст письма</th>
+                            <th>Дата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr  class="info">
+                                <td style="border: 1px solid #eeeeee; padding: 15px;">
+                                    @if (string.IsNullOrEmpty(item.Name))
+                                    {
+                                        <text>-</text>
+                                    }
+                                    else
+                                    {
+                                        @item.Name
+                                    }
+                                </td>
+                                <td style="border: 1px solid #eeeeee; padding: 15px;">
+                                    @if (string.IsNullOrEmpty(item.Phone))
+                                    {
+                                        <text>-</text>
+                                    }
+                                    else
+                                    {
+                                        @item.Phone
+                                    }
+                                </td>
+                                <td style="border: 1px solid #eeeeee; padding: 15px;">
+                                    @if (string.IsNullOrEmpty(item.Email))
+                                    {
+                                        <text>-</text>
+                                    }
+                                    else
+                                    {
+                                        @item.Email
+                                    }
+                                </td>
+                                <td style="border: 1px solid #eeeeee; padding: 15px;">
+                                    @if (string.IsNullOrEmpty(item.Description))
+                                    {
+                                        <text>-</text>
+                                    }
+                                    else
+                                    {
+                                        @item.Description
+                                    }
+                                </td>
+                                <td style="border: 1px solid #eeeeee; padding: 15px;">@item.Date.ToString("g")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
