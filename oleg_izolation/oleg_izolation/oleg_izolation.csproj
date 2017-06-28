@@ -233,6 +233,7 @@
     <Content Include="Content\fancybox\jquery.fancybox.pack.js" />
     <Content Include="Content\fancybox\nav.png" />
     <Content Include="Content\Images\banner.png" />
+    <Content Include="Content\Images\banner_2.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\preim.png" />
     <Content Include="Content\Images\zaglushka.png" />
@@ -360,6 +361,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\local.pubxml" />
+    <Content Include="Views\LandingPages\Gidroizolation_4.cshtml" />
+    <Content Include="Views\LandingPages\Gidroizolation_5.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

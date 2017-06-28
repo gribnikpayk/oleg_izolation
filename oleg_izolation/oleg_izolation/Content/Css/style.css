@@ -198,6 +198,7 @@ html {
     right:30px;
     bottom:30px;
     display:none;
+    z-index: 99999;
 }
 body {
     color: #3f3f3f;
