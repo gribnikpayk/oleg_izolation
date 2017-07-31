@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="Напыляемая теплоизоляция Теплый Дом">
+    <meta name="description" content="Напыляемая теплоизоляция">
+    <meta name="keywords" content="Напыляемая теплоизоляция Альянс плюс">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/bundles/mainCss")
     @Scripts.Render("~/bundles/jquery")
@@ -34,7 +34,9 @@
                         <div class="phone-block">
                             <div class="phone-inner">
                                 <i class="fa fa-phone phone-header-color" aria-hidden="true" style="margin-right:8px;font-size:28px"></i>
-                                <div class="phone-info">+79219032160</div>
+                                <div class="phone-info">+7 (921) 903-21-60</div>
+                                <i class="fa fa-phone phone-header-color" aria-hidden="true" style="margin-right:8px;font-size:28px"></i>
+                                <div class="phone-info">+7 (905) 204-71-46</div>
                                 <div style="margin-top:-10px"><a href="@Url.Action("callBackForm","Home")" class="call-back-form-link fancybox fancybox.ajax" value="Бесплатный звонок" style="">Бесплатный звонок</a></div>
                             </div>
                         </div>
@@ -50,7 +52,7 @@
 
                 <div class="logo-block">
                     <a href="@Url.Action("Index","Home")" class="logo-link">
-                        <img src="~/Content/Images/logo.png" alt="Теплый Дом" class="sidebar-logo">
+                        <img src="~/Content/Images/logo.png" alt="альянс плюс" class="sidebar-logo">
                     </a>
                 </div>
                 <nav class="top-menu">
@@ -69,7 +71,7 @@
                         </script>
                     </div>
                 </nav>
-                
+
                 <div class="header-bottom-block clear">
 
                     <section id="slider" class="clear">
@@ -145,7 +147,7 @@
                                         @Html.LandingPageUrl("Gidroizolation_5", "Гидроизоляция вводов коммуникаций")
                                     </li>
                                 </ul>
-                                
+
                             </div>
                         </div>
 
@@ -185,7 +187,8 @@
                 <div class="phone-block">
                     <div class="phone-inner">
                         <h4>Телефон</h4>
-                        <div class="phone-info">+79219032160</div>
+                        <div class="phone-info">+7 (921) 903-21-60</div>
+                        <div class="phone-info">+7 (905) 204-71-46</div>
                     </div>
                 </div>
 
@@ -200,7 +203,7 @@
                     <div class="email-inner">
                         <h4>Почта</h4>
                         <div class="email-info">
-                            <a href="mailto:9032160@mail.ru">9032160@mail.ru</a>
+                            <a href="mailto:izolationspb@gmail.com">izolationspb@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -209,7 +212,7 @@
             <div class="foot_bl_left">
                 <div class="copy-block">
                     <div class="copy-inner">
-                        <a href="@Url.Action("Index","Home")">изоляцияспб.рф</a>
+                        <a href="@Url.Action("Index","Home")">izolationspb.ru</a>
                     </div>
                 </div>
             </div>
@@ -220,5 +223,33 @@
         <a href="#" class="close" title="Закрыть">×</a>
         <div class="content"></div>
     </div>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter45479313 = new Ya.Metrika({
+                        id: 45479313,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true
+                    });
+                } catch (e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/45479313" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 </html>
